@@ -17,13 +17,13 @@ export default function FavoritesPage() {
     const favoriteRecipes = allRecipes.filter(r => favorites.includes(r.id));
 
     return (
-        <div className="min-h-screen bg-gray-50 p-4 md:p-8">
+        <div className="min-h-screen bg-gray-50 dark:bg-gray-950 p-4 md:p-8 transition-colors">
             <div className="max-w-5xl mx-auto space-y-8">
                 <div>
-                    <h1 className="text-3xl font-bold font-serif text-gray-900 mb-2 flex items-center gap-2">
+                    <h1 className="text-3xl font-bold font-serif text-gray-900 dark:text-gray-100 mb-2 flex items-center gap-2">
                         <Heart className="w-8 h-8 text-red-500 fill-red-500" /> Saved Recipes
                     </h1>
-                    <p className="text-gray-600">Your favorite air fryer recipes across all modes.</p>
+                    <p className="text-gray-600 dark:text-gray-400">Your favorite air fryer recipes across all modes.</p>
                 </div>
 
                 {favoriteRecipes.length > 0 ? (
@@ -39,12 +39,12 @@ export default function FavoritesPage() {
                         ))}
                     </div>
                 ) : (
-                    <div className="text-center py-20 bg-white rounded-3xl border border-gray-100">
-                        <div className="mx-auto w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mb-4">
-                            <Heart className="w-8 h-8 text-gray-400" />
+                    <div className="text-center py-20 bg-white dark:bg-gray-900 rounded-3xl border border-gray-100 dark:border-gray-800">
+                        <div className="mx-auto w-16 h-16 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center mb-4">
+                            <Heart className="w-8 h-8 text-gray-400 dark:text-gray-500" />
                         </div>
-                        <h2 className="text-xl font-bold text-gray-800 mb-2">No favorites yet</h2>
-                        <p className="text-gray-500 max-w-sm mx-auto mb-6">Tap the heart icon on any recipe to save it here for quick access later.</p>
+                        <h2 className="text-xl font-bold text-gray-800 dark:text-gray-100 mb-2">No favorites yet</h2>
+                        <p className="text-gray-500 dark:text-gray-400 max-w-sm mx-auto mb-6">Tap the heart icon on any recipe to save it here for quick access later.</p>
                         <Link
                             href="/recipes"
                             className="inline-flex items-center px-6 py-3 border border-transparent text-sm font-medium rounded-full shadow-sm text-white bg-orange-600 hover:bg-orange-700 transition"

@@ -13,10 +13,10 @@ export const RecipeCard: React.FC<RecipeCardProps> = ({ recipe, isFavorite, onTo
     return (
         <div
             onClick={() => onClick(recipe)}
-            className="bg-white rounded-xl shadow-sm border border-orange-100 hover:shadow-md transition-shadow cursor-pointer overflow-hidden flex flex-col h-full"
+            className="bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-orange-100 dark:border-gray-800 hover:shadow-md transition-shadow cursor-pointer overflow-hidden flex flex-col h-full"
         >
             {recipe.imageUrl && (
-                <div className="h-48 w-full relative overflow-hidden bg-orange-50">
+                <div className="h-48 w-full relative overflow-hidden bg-orange-50 dark:bg-gray-800">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                         src={recipe.imageUrl}
@@ -27,7 +27,7 @@ export const RecipeCard: React.FC<RecipeCardProps> = ({ recipe, isFavorite, onTo
             )}
             <div className="p-4 flex-1">
                 <div className="flex justify-between items-start mb-3">
-                    <h3 className="text-lg font-semibold text-gray-800 line-clamp-2">{recipe.name}</h3>
+                    <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-100 line-clamp-2">{recipe.name}</h3>
                     <button
                         onClick={(e) => onToggleFavorite(recipe.id, e)}
                         className="text-gray-400 hover:text-orange-500 transition-colors p-1"
@@ -37,18 +37,18 @@ export const RecipeCard: React.FC<RecipeCardProps> = ({ recipe, isFavorite, onTo
                     </button>
                 </div>
 
-                <div className="space-y-2 text-sm text-gray-600">
+                <div className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
                     <div className="flex items-center gap-2">
                         <Flame className="w-4 h-4 text-orange-500" />
                         <span className="font-medium text-orange-700">{recipe.mode}</span>
                     </div>
 
                     <div className="grid grid-cols-2 gap-2 mt-3">
-                        <div className="flex items-center gap-1.5 bg-orange-50/50 p-1.5 rounded-md">
+                        <div className="flex items-center gap-1.5 bg-orange-50/50 dark:bg-gray-800/50 p-1.5 rounded-md">
                             <Thermometer className="w-4 h-4 text-gray-500" />
                             <span>{recipe.temperature}°C</span>
                         </div>
-                        <div className="flex items-center gap-1.5 bg-orange-50/50 p-1.5 rounded-md">
+                        <div className="flex items-center gap-1.5 bg-orange-50/50 dark:bg-gray-800/50 p-1.5 rounded-md">
                             <Clock className="w-4 h-4 text-gray-500" />
                             <span>{recipe.timeMin}{recipe.timeMax ? `-${recipe.timeMax}` : ''} {recipe.timeUnit}</span>
                         </div>
@@ -62,7 +62,7 @@ export const RecipeCard: React.FC<RecipeCardProps> = ({ recipe, isFavorite, onTo
             </div>
 
             {(recipe.notes || recipe.isCustom) && (
-                <div className="bg-orange-50/50 px-4 py-2 border-t border-orange-100 text-xs text-orange-800 flex justify-between items-center">
+                <div className="bg-orange-50/50 dark:bg-orange-950/20 px-4 py-2 border-t border-orange-100 dark:border-orange-900/30 text-xs text-orange-800 dark:text-orange-300 flex justify-between items-center">
                     <span className="truncate">{recipe.notes || 'No extra notes'}</span>
                     {recipe.isCustom && <span className="bg-orange-200 text-orange-800 px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider">Custom</span>}
                 </div>

@@ -23,9 +23,9 @@ export const RecipeModal: React.FC<RecipeModalProps> = ({ recipe, isOpen, onClos
     if (!isOpen || !recipe) return null;
 
     return (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm transition-opacity" onClick={onClose}>
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 dark:bg-black/80 backdrop-blur-sm transition-opacity" onClick={onClose}>
             <div
-                className="bg-white rounded-2xl shadow-xl w-full max-w-md overflow-hidden transform transition-all animate-in fade-in zoom-in-95 duration-200 flex flex-col max-h-[90vh]"
+                className="bg-white dark:bg-gray-900 rounded-2xl shadow-xl w-full max-w-md overflow-hidden transform transition-all animate-in fade-in zoom-in-95 duration-200 flex flex-col max-h-[90vh]"
                 onClick={(e) => e.stopPropagation()}
             >
                 {recipe.imageUrl ? (
@@ -43,8 +43,8 @@ export const RecipeModal: React.FC<RecipeModalProps> = ({ recipe, isOpen, onClos
                         </button>
                     </div>
                 ) : (
-                    <div className="flex justify-between items-center p-5 border-b border-gray-100 bg-orange-50/30 shrink-0">
-                        <h2 className="text-xl font-bold text-gray-800 pr-4">{recipe.name}</h2>
+                    <div className="flex justify-between items-center p-5 border-b border-gray-100 dark:border-gray-800 bg-orange-50/30 dark:bg-orange-900/10 shrink-0">
+                        <h2 className="text-xl font-bold text-gray-800 dark:text-gray-100 pr-4">{recipe.name}</h2>
                         <button
                             onClick={onClose}
                             className="p-1.5 rounded-full hover:bg-orange-100 text-gray-500 transition-colors"
@@ -57,17 +57,17 @@ export const RecipeModal: React.FC<RecipeModalProps> = ({ recipe, isOpen, onClos
                 <div className="p-6 space-y-6 overflow-y-auto">
                     {/* Main Stats */}
                     <div className="grid grid-cols-3 gap-4">
-                        <div className="flex flex-col items-center justify-center p-3 bg-orange-50 rounded-xl text-center">
+                        <div className="flex flex-col items-center justify-center p-3 bg-orange-50 dark:bg-gray-800 rounded-xl text-center">
                             <Flame className="w-6 h-6 text-orange-500 mb-1" />
                             <span className="text-xs text-gray-500 capitalize">Mode</span>
                             <span className="font-semibold text-gray-800 text-sm mt-0.5">{recipe.mode}</span>
                         </div>
-                        <div className="flex flex-col items-center justify-center p-3 bg-orange-50 rounded-xl text-center">
+                        <div className="flex flex-col items-center justify-center p-3 bg-orange-50 dark:bg-gray-800 rounded-xl text-center">
                             <Thermometer className="w-6 h-6 text-orange-500 mb-1" />
                             <span className="text-xs text-gray-500">Temp</span>
                             <span className="font-semibold text-gray-800 text-sm mt-0.5">{recipe.temperature}°C</span>
                         </div>
-                        <div className="flex flex-col items-center justify-center p-3 bg-orange-50 rounded-xl text-center">
+                        <div className="flex flex-col items-center justify-center p-3 bg-orange-50 dark:bg-gray-800 rounded-xl text-center">
                             <Clock className="w-6 h-6 text-orange-500 mb-1" />
                             <span className="text-xs text-gray-500">Time</span>
                             <span className="font-semibold text-gray-800 text-sm mt-0.5">
@@ -78,8 +78,8 @@ export const RecipeModal: React.FC<RecipeModalProps> = ({ recipe, isOpen, onClos
 
                     {/* Placement Details */}
                     <div className="space-y-3 pt-2">
-                        <div className="flex items-center gap-3 p-3 border border-gray-100 rounded-xl">
-                            <div className="bg-gray-100 p-2 rounded-lg">
+                        <div className="flex items-center gap-3 p-3 border border-gray-100 dark:border-gray-800 rounded-xl">
+                            <div className="bg-gray-100 dark:bg-gray-800 p-2 rounded-lg">
                                 <Box className="w-5 h-5 text-gray-600" />
                             </div>
                             <div>
@@ -87,8 +87,8 @@ export const RecipeModal: React.FC<RecipeModalProps> = ({ recipe, isOpen, onClos
                                 <p className="font-medium text-gray-800">{recipe.accessory}</p>
                             </div>
                         </div>
-                        <div className="flex items-center gap-3 p-3 border border-gray-100 rounded-xl">
-                            <div className="bg-gray-100 p-2 rounded-lg">
+                        <div className="flex items-center gap-3 p-3 border border-gray-100 dark:border-gray-800 rounded-xl">
+                            <div className="bg-gray-100 dark:bg-gray-800 p-2 rounded-lg">
                                 <Layers className="w-5 h-5 text-gray-600" />
                             </div>
                             <div>
@@ -100,7 +100,7 @@ export const RecipeModal: React.FC<RecipeModalProps> = ({ recipe, isOpen, onClos
 
                     {/* Notes & Reminders */}
                     {recipe.notes && (
-                        <div className="bg-amber-50 p-4 rounded-xl flex gap-3 text-amber-800">
+                        <div className="bg-amber-50 dark:bg-amber-950/30 p-4 rounded-xl flex gap-3 text-amber-800 dark:text-amber-400">
                             <Info className="w-5 h-5 flex-shrink-0 mt-0.5" />
                             <div>
                                 <p className="font-medium text-sm mb-1">Recipe Note</p>

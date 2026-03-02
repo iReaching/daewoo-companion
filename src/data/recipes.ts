@@ -29,7 +29,7 @@ export const defaultRecipes: Recipe[] = [
         accessory: 'Fryer basket',
         rackPosition: 'Middle rack level',
         notes: 'About 400g, turn food',
-        imageUrl: 'https://images.unsplash.com/photo-1573081467066-cb506153ea3?auto=format&fit=crop&q=80&w=800'
+        imageUrl: 'https://images.unsplash.com/photo-1576107232684-1279f3908594?auto=format&fit=crop&w=800&q=80'
     },
     {
         id: 'chicken-wings',
@@ -77,7 +77,7 @@ export const defaultRecipes: Recipe[] = [
         temperature: 180,
         accessory: 'Bake tray',
         rackPosition: 'Bottom rack level',
-        imageUrl: 'https://images.unsplash.com/photo-1517743958931-294bc16b8015?auto=format&fit=crop&q=80&w=800'
+        imageUrl: 'https://images.unsplash.com/photo-1551462147-ff29053bfc14?auto=format&fit=crop&w=800&q=80'
     },
     {
         id: 'cake',

@@ -42,13 +42,13 @@ function RecipesContent() {
     };
 
     return (
-        <div className="min-h-screen bg-gray-50 p-4 md:p-8">
+        <div className="min-h-screen bg-gray-50 dark:bg-gray-950 p-4 md:p-8 transition-colors">
             <div className="max-w-5xl mx-auto space-y-6">
 
                 <div className="mb-8 flex flex-col md:flex-row md:justify-between md:items-end gap-4">
                     <div>
-                        <h1 className="text-3xl font-bold font-serif text-gray-900 mb-2">Recipe Book</h1>
-                        <p className="text-gray-600">Browse all recommended settings for your foods.</p>
+                        <h1 className="text-3xl font-bold font-serif text-gray-900 dark:text-gray-100 mb-2">Recipe Book</h1>
+                        <p className="text-gray-600 dark:text-gray-400">Browse all recommended settings for your foods.</p>
                     </div>
                     <Link
                         href="/recipes/custom"
@@ -73,7 +73,7 @@ function RecipesContent() {
                             onClick={() => setSelectedMode(mode)}
                             className={`whitespace-nowrap px-4 py-2 rounded-full text-sm font-medium transition-colors ${selectedMode === mode
                                 ? 'bg-orange-600 text-white shadow-sm'
-                                : 'bg-white text-gray-600 border border-gray-200 hover:bg-orange-50'
+                                : 'bg-white dark:bg-gray-900 text-gray-600 dark:text-gray-300 border border-gray-200 dark:border-gray-800 hover:bg-orange-50 dark:hover:bg-gray-800'
                                 }`}
                         >
                             {mode}
@@ -94,11 +94,11 @@ function RecipesContent() {
                             />
                         ))
                     ) : (
-                        <div className="col-span-full py-12 text-center text-gray-500">
+                        <div className="col-span-full py-12 text-center text-gray-500 dark:text-gray-400">
                             <p className="text-lg">No recipes found matching your criteria.</p>
                             <button
                                 onClick={() => { setSearchQuery(''); setSelectedMode('All'); }}
-                                className="mt-4 text-orange-600 hover:underline"
+                                className="mt-4 text-orange-600 dark:text-orange-400 hover:underline"
                             >
                                 Clear all filters
                             </button>
@@ -118,7 +118,7 @@ function RecipesContent() {
 
 export default function RecipesPage() {
     return (
-        <Suspense fallback={<div className="min-h-screen bg-gray-50 flex items-center justify-center text-gray-400">Loading...</div>}>
+        <Suspense fallback={<div className="min-h-screen bg-gray-50 dark:bg-gray-950 flex items-center justify-center text-gray-400">Loading...</div>}>
             <RecipesContent />
         </Suspense>
     );
