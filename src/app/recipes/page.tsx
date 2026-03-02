@@ -1,5 +1,7 @@
 'use client';
 import React, { useState, useMemo } from 'react';
+import Link from 'next/link';
+import { PlusCircle } from 'lucide-react';
 import { SearchBar } from '@/components/SearchBar';
 import { RecipeCard } from '@/components/RecipeCard';
 import { RecipeModal } from '@/components/RecipeModal';
@@ -43,9 +45,18 @@ function RecipesContent() {
         <div className="min-h-screen bg-gray-50 p-4 md:p-8">
             <div className="max-w-5xl mx-auto space-y-6">
 
-                <div className="mb-8">
-                    <h1 className="text-3xl font-bold font-serif text-gray-900 mb-2">Recipe Book</h1>
-                    <p className="text-gray-600">Browse all recommended settings for your foods.</p>
+                <div className="mb-8 flex flex-col md:flex-row md:justify-between md:items-end gap-4">
+                    <div>
+                        <h1 className="text-3xl font-bold font-serif text-gray-900 mb-2">Recipe Book</h1>
+                        <p className="text-gray-600">Browse all recommended settings for your foods.</p>
+                    </div>
+                    <Link
+                        href="/recipes/custom"
+                        className="inline-flex items-center justify-center gap-2 bg-orange-600 text-white px-5 py-2.5 rounded-full font-medium hover:bg-orange-700 transition-colors shadow-sm"
+                    >
+                        <PlusCircle className="w-5 h-5" />
+                        Add a Recipe
+                    </Link>
                 </div>
 
                 <SearchBar
