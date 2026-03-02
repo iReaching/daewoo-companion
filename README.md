@@ -1,36 +1,38 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Daewoo Air Fryer Oven Companion
 
-## Getting Started
+A polished, private web app acting as a kitchen companion for my **Daewoo 16L Air Fryer Oven (DRAF01-16CRMSL)**. Built with Next.js 14, Tailwind CSS, and `lucide-react` for a minimal, warm aesthetic.
 
-First, run the development server:
+## Features
+- **Recipe Book:** Browse and filter by mode, automatically loaded with reference values from the manual.
+- **Favorites & Recent:** Save and revisit frequently used settings (uses `localStorage`).
+- **Custom Recipes:** Add your own specific cooking notes and settings.
+- **Troubleshooting & Manual:** Digital versions of the physical manual.
+- **Cleaning & Safety:** Quick access to the oven's care limits.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## How to Run Locally
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. Clone or download this project.
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the dev server:
+   ```bash
+   npm run dev
+   ```
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Editing Data
+Because this app is static with no backend, all seed data lives directly in `src/data/`:
+- **`src/data/recipes.ts`**: Edit initial recommended recipes here.
+- **`src/data/troubleshooting.ts`**: Change/add troubleshooting.
+- **`src/data/manual.ts`**: Update specs.
+- **`src/data/safety.ts`**: Update safeguards.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Vercel Deployment
+This repository is pre-configured to build seamlessly on Vercel:
+1. Push this code to a local/private GitHub repo.
+2. Import the project into Vercel and leave the default settings (`Next.js` and `npm run build`).
+3. Deploy!
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+*Note: Data persistence relies entirely on browser `localStorage`. Deploying essentially hosts the static dashboard.*
