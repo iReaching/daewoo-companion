@@ -25,20 +25,36 @@ export const RecipeModal: React.FC<RecipeModalProps> = ({ recipe, isOpen, onClos
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm transition-opacity" onClick={onClose}>
             <div
-                className="bg-white rounded-2xl shadow-xl w-full max-w-md overflow-hidden transform transition-all animate-in fade-in zoom-in-95 duration-200"
+                className="bg-white rounded-2xl shadow-xl w-full max-w-md overflow-hidden transform transition-all animate-in fade-in zoom-in-95 duration-200 flex flex-col max-h-[90vh]"
                 onClick={(e) => e.stopPropagation()}
             >
-                <div className="flex justify-between items-center p-5 border-b border-gray-100 bg-orange-50/30">
-                    <h2 className="text-xl font-bold text-gray-800 pr-4">{recipe.name}</h2>
-                    <button
-                        onClick={onClose}
-                        className="p-1.5 rounded-full hover:bg-orange-100 text-gray-500 transition-colors"
-                    >
-                        <X className="w-5 h-5" />
-                    </button>
-                </div>
+                {recipe.imageUrl ? (
+                    <div className="relative h-48 w-full shrink-0">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img src={recipe.imageUrl} alt={recipe.name} className="object-cover w-full h-full" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-5">
+                            <h2 className="text-2xl font-bold text-white pr-4">{recipe.name}</h2>
+                        </div>
+                        <button
+                            onClick={onClose}
+                            className="absolute top-4 right-4 p-1.5 rounded-full bg-black/40 text-white hover:bg-black/60 transition-colors backdrop-blur-sm"
+                        >
+                            <X className="w-5 h-5" />
+                        </button>
+                    </div>
+                ) : (
+                    <div className="flex justify-between items-center p-5 border-b border-gray-100 bg-orange-50/30 shrink-0">
+                        <h2 className="text-xl font-bold text-gray-800 pr-4">{recipe.name}</h2>
+                        <button
+                            onClick={onClose}
+                            className="p-1.5 rounded-full hover:bg-orange-100 text-gray-500 transition-colors"
+                        >
+                            <X className="w-5 h-5" />
+                        </button>
+                    </div>
+                )}
 
-                <div className="p-6 space-y-6">
+                <div className="p-6 space-y-6 overflow-y-auto">
                     {/* Main Stats */}
                     <div className="grid grid-cols-3 gap-4">
                         <div className="flex flex-col items-center justify-center p-3 bg-orange-50 rounded-xl text-center">

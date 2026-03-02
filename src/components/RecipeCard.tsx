@@ -15,6 +15,16 @@ export const RecipeCard: React.FC<RecipeCardProps> = ({ recipe, isFavorite, onTo
             onClick={() => onClick(recipe)}
             className="bg-white rounded-xl shadow-sm border border-orange-100 hover:shadow-md transition-shadow cursor-pointer overflow-hidden flex flex-col h-full"
         >
+            {recipe.imageUrl && (
+                <div className="h-48 w-full relative overflow-hidden bg-orange-50">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                        src={recipe.imageUrl}
+                        alt={recipe.name}
+                        className="w-full h-full object-cover transition-transform hover:scale-105"
+                    />
+                </div>
+            )}
             <div className="p-4 flex-1">
                 <div className="flex justify-between items-start mb-3">
                     <h3 className="text-lg font-semibold text-gray-800 line-clamp-2">{recipe.name}</h3>

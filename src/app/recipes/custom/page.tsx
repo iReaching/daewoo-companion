@@ -17,7 +17,8 @@ export default function CustomRecipePage() {
         temperature: 200,
         accessory: 'Fryer basket' as Accessory,
         rackPosition: 'Middle rack level' as RackPosition,
-        notes: ''
+        notes: '',
+        imageUrl: ''
     });
 
     const handleSubmit = (e: React.FormEvent) => {
@@ -37,6 +38,7 @@ export default function CustomRecipePage() {
             accessory: formData.accessory,
             rackPosition: formData.rackPosition,
             notes: formData.notes,
+            imageUrl: formData.imageUrl || undefined,
             isCustom: true
         };
 
@@ -186,6 +188,19 @@ export default function CustomRecipePage() {
                             rows={3}
                             placeholder="e.g., Turn halfway through, spray with olive oil..."
                             className="w-full px-4 py-2 border border-gray-200 rounded-xl focus:ring-2 focus:ring-orange-500 outline-none resize-none"
+                        />
+                    </div>
+
+                    <div className="space-y-2">
+                        <label htmlFor="imageUrl" className="block text-sm font-medium text-gray-700">Image URL (Optional)</label>
+                        <input
+                            type="url"
+                            id="imageUrl"
+                            name="imageUrl"
+                            value={formData.imageUrl}
+                            onChange={handleChange}
+                            placeholder="https://example.com/image.jpg"
+                            className="w-full px-4 py-2 border border-gray-200 rounded-xl focus:ring-2 focus:ring-orange-500 outline-none"
                         />
                     </div>
 

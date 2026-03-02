@@ -14,6 +14,7 @@ export interface Recipe {
     rackPosition: RackPosition;
     notes?: string;
     isCustom?: boolean;
+    imageUrl?: string;
 }
 
 export const defaultRecipes: Recipe[] = [
@@ -28,6 +29,7 @@ export const defaultRecipes: Recipe[] = [
         accessory: 'Fryer basket',
         rackPosition: 'Middle rack level',
         notes: 'About 400g, turn food',
+        imageUrl: 'https://images.unsplash.com/photo-1573081467066-cb506153ea3?auto=format&fit=crop&q=80&w=800'
     },
     {
         id: 'chicken-wings',
@@ -40,6 +42,7 @@ export const defaultRecipes: Recipe[] = [
         accessory: 'Bake tray',
         rackPosition: 'Middle rack level',
         notes: 'Food turning',
+        imageUrl: 'https://images.unsplash.com/photo-1527477396000-e27163b481c2?auto=format&fit=crop&q=80&w=800'
     },
     {
         id: 'pork-chop',
@@ -51,6 +54,7 @@ export const defaultRecipes: Recipe[] = [
         accessory: 'Bake tray',
         rackPosition: 'Middle rack level',
         notes: 'Food turning',
+        imageUrl: 'https://images.unsplash.com/photo-1432139555190-58524dae6a55?auto=format&fit=crop&q=80&w=800'
     },
     {
         id: 'popcorn-chicken',
@@ -61,6 +65,7 @@ export const defaultRecipes: Recipe[] = [
         temperature: 200,
         accessory: 'Fryer basket',
         rackPosition: 'Middle rack level',
+        imageUrl: 'https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=crop&q=80&w=800'
     },
     {
         id: 'egg-tart',
@@ -72,6 +77,7 @@ export const defaultRecipes: Recipe[] = [
         temperature: 180,
         accessory: 'Bake tray',
         rackPosition: 'Bottom rack level',
+        imageUrl: 'https://images.unsplash.com/photo-1517743958931-294bc16b8015?auto=format&fit=crop&q=80&w=800'
     },
     {
         id: 'cake',
@@ -82,6 +88,7 @@ export const defaultRecipes: Recipe[] = [
         temperature: 160,
         accessory: 'Bake tray',
         rackPosition: 'Bottom rack level',
+        imageUrl: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&q=80&w=800'
     },
     {
         id: 'cookies',
@@ -93,6 +100,7 @@ export const defaultRecipes: Recipe[] = [
         accessory: 'Bake tray',
         rackPosition: 'Bottom rack level',
         notes: 'Food turning',
+        imageUrl: 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&q=80&w=800'
     },
     {
         id: 'roast-whole-chicken',
@@ -103,6 +111,7 @@ export const defaultRecipes: Recipe[] = [
         temperature: 230,
         accessory: 'Fryer basket',
         rackPosition: 'Bottom rack level',
+        imageUrl: 'https://images.unsplash.com/photo-1598514982205-f36b96d1e8d4?auto=format&fit=crop&q=80&w=800'
     },
     {
         id: 'dry-fruits',
@@ -114,6 +123,7 @@ export const defaultRecipes: Recipe[] = [
         accessory: 'Fryer basket',
         rackPosition: 'Middle rack level',
         notes: 'Adjust time according to fruit thickness',
+        imageUrl: 'https://images.unsplash.com/photo-1600857544200-b2f666a9a2ec?auto=format&fit=crop&q=80&w=800'
     },
     {
         id: 'pizza',
@@ -126,5 +136,6 @@ export const defaultRecipes: Recipe[] = [
         accessory: 'Bake tray',
         rackPosition: 'Bottom rack level',
         notes: 'Needs to be defrosted',
+        imageUrl: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&q=80&w=800'
     }
 ];
